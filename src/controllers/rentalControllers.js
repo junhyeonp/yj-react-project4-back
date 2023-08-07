@@ -5,7 +5,7 @@ export const rentalNoticeWrite = async (req, res) => {
   console.log(title, description, writer);
   console.log(title, description, writer);
   try {
-    const notice = await Notice.create({
+    const notice = await Notice.create({             
       title,
       description,
       writer,
