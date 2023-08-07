@@ -9,7 +9,7 @@ const PORT = 8080;
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000","https://regal-bienenstitch-5b5903.netlify.app"],
   methods: ["GET", "POST"],
   credentials: true,
 };
