@@ -9,16 +9,17 @@ const userSchema = new mongoose.Schema({
     mobile: String,
     email: String,
     address: String,
+    avatarUrl: String,
     createdAt: Date,
 });
 
 // 데이터베이스에 'password'를 저장하기 전에
-// bcrypt를 이용하여 암호화한 수 저장 
-userSchema.pre("save", async function(){
-    if(this.isModified("password")) {
+// bcrypt를 이용하여 암호화한 수 저장
+userSchema.pre("save", async function () {
+    if (this.isModified("password")) {
         this.password = await bcrypt.hash(this.password, 5);
     }
-})
+});
 
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model("User", userSchema);
 export default User;
